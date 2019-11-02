@@ -1,32 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="bubbles">
+      <img srcset="@/assets/background/bubbles/bubbles.png 1x, @/assets/background/bubbles/bubbles@2x.png 2x" alt="bubbles" class="bubbles__image">
     </div>
-    <router-view/>
+    <div class="code">
+      <img srcset="@/assets/background/code/code_background.png 1x, @/assets/background/code/code_background@2x.png 2x" alt="bubbles" class="code__image">
+    </div>
+    <p class="primaryHeading primaryHeading-home">
+      Full-Stack Web Developer
+    </p>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "@/styles/components/_main.scss";
 </style>

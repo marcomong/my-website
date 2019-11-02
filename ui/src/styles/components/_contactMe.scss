@@ -9,8 +9,13 @@
   margin: auto;
   padding: 1rem;
 
+  @include respond(phone) {
+    width: 95%;
+    justify-content: left;
+  }
+
   @include respond(tab-port) {
-    transform: translateY(0);
+    transform: translateY(0%);
   }
 
   &__header {
@@ -39,8 +44,26 @@
       @include respond(tab-port) {
         font-size: $font-small;
       }
+
+      @include respond(phone) {
+        width: 80%;
+      }
     }
   }
+  
+  &__state {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 2.5rem;
+  }
+}
+
+.emailSent {
+  color: $color-white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: $font-medium;
 }
 
 .emailForm {

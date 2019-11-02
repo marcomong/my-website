@@ -5,8 +5,20 @@
   top: 50%;
 
   &__image {
-    height: auto;
-    width: 100%;
-    transform: translateY(-50%);
+    height: 30%;
+    width: auto;
+    transform: translate(5%,-50%);
+
+    @include respond(tab-port) {
+      height: 70%;
+      width: auto;
+      transform: translate(10%, -70%);
+    }
+
+    @include respond(phone) {
+      height: 60%;
+      width: auto;
+      transform: translate(5%, -60%);
+    }
   }
 }

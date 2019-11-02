@@ -1,6 +1,8 @@
 const nodemailer = require('nodemailer')
 const log = require('./Logger')
 const config = require('../configuration/config')
+const xoauth2 = require('xoauth2')
+
 var fs = require('fs')
 const path = require('path')
 

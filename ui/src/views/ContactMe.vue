@@ -11,16 +11,25 @@
       </div>
     </div>
     <form @submit.prevent="handleSubmit" class="emailForm">
-      <input class="input emailForm__50 emailForm__50-left"  type="text" v-model="form.name" placeholder="Name">
-      <input class="input emailForm__50 emailForm__50-right"  type="text" v-model="form.lastName" placeholder="Last Name">
-      <input class="input emailForm__100"  type="email" v-model="form.email" placeholder="Email">
-      <textarea name="message" cols="30" rows="10" class="textArea" placeholder="Type here..." v-model="form.message"></textarea>
-      <button type="submit" class="btn btn-rectangle btn-50 btn-right" :disabled="!isFormFilled" :class="{ btnDisabled: !isFormFilled }">Send</button>
+      <input class="input emailForm__50 emailForm__50-left"  type="text" v-model="form.name" placeholder="Name" :disabled="isLoading">
+      <input class="input emailForm__50 emailForm__50-right"  type="text" v-model="form.lastName" placeholder="Last Name" :disabled="isLoading">
+      <input class="input emailForm__100"  type="email" v-model="form.email" placeholder="Email" :disabled="isLoading">
+      <textarea name="message" cols="30" rows="10" class="textArea" placeholder="Type here..." v-model="form.message" :disabled="isLoading"></textarea>
+      <div class="contactMe__state" v-if="isLoading">
+       <pulse-loader :loading="isLoading" :color="color"></pulse-loader>
+      </div>
+      <button v-if="!isLoading && !isEmailSent" type="submit" class="btn btn-rectangle btn-50 btn-right" :disabled="!isFormFilled" :class="{ btnDisabled: !isFormFilled }">Send</button>
+      <div class="contactMe__state emailSent" v-if="isEmailSent">
+        &#x2714; Sent
+      </div>
     </form>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+
 export default {
   name: 'contactMe',
   data () {
@@ -30,18 +39,30 @@ export default {
         lastName: '',
         email: '',
         message: ''
-      }
+      },
+      color: '#1292E6'
     }
   },
   computed: {
+    ...mapGetters(['getIsLoading', 'getIsEmailSent']),
     isFormFilled () {
       return this.form.name && this.form.lastName && this.form.email && this.form.message
+    },
+    isLoading () {
+      return this.getIsLoading
+    },
+    isEmailSent () {
+      return this.getIsEmailSent
     }
   },
   methods: {
+    ...mapActions(['contactMe']),
     handleSubmit () {
-      console.log('test')
+      this.contactMe(this.form)
     }
+  },
+  components: {
+    PulseLoader
   }
 }
 </script>

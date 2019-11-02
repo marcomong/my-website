@@ -1,11 +1,14 @@
 const express = require('express')
 const log = require('./models/Logger')
 const bodyParser = require('body-parser')
+const conig = require('./configuration/config')
+const cors = require('cors')
 
-const emailRoutes = require('./routes/emailRoutes.js')
+const emailRoutes = require('./routes/emailRoutes')
 
 let app = express()
-app.set('port', 3000)
+app.use(cors())
+app.set('port', conig.app.port)
 
 app.use(bodyParser.json({
   limit: '10mb'

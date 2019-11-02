@@ -46,14 +46,14 @@
   @include respond(tab-port) {
     top: 50%;
     left: 0;
-    height: 50%;
+    height: 60%;
     width: 100%;
   }
 
   @include respond(phone) {
-    top: 50%;
+    top: 45%;
     left: 0;
-    height: 50%;
+    height: 60%;
     width: 100%;
   }
 }

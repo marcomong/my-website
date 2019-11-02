@@ -24,6 +24,10 @@ body {
   cursor: pointer;
   outline: none;
 
+  &-trasparent {
+    background-color: transparent;
+  }
+
   &Disabled {
     background-color: rgba($color-blue, 0.4);
     color: rgba($color-white, 0.5);
@@ -52,7 +56,19 @@ body {
   &__image {
     height: 50%;
     width: auto;
-    transform: translateY(5%);
+    transform: translateY(2%);
+  }
+
+  &-bottomRight {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+  }
+
+  &-topRight {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
   }
   
   &:hover {

@@ -4,14 +4,16 @@
       <div class="contactMe__header-main">
         <p>Hi!</p>
       </div>
-      <p class="contactMe__header-subMain">
-        Please fill the info and I'll reply as soon as possible
-      </p>
+      <div class="contactMe__header-subMain">
+        <p>
+          Please fill the info and I'll reply as soon as possible
+        </p>
+      </div>
     </div>
     <form @submit.prevent="handleSubmit" class="emailForm">
       <input class="input emailForm__50 emailForm__50-left"  type="text" v-model="form.name" placeholder="Name">
       <input class="input emailForm__50 emailForm__50-right"  type="text" v-model="form.lastName" placeholder="Last Name">
-      <input class="input emailForm__100"  type="text" v-model="form.email" placeholder="Email">
+      <input class="input emailForm__100"  type="email" v-model="form.email" placeholder="Email">
       <textarea name="message" cols="30" rows="10" class="textArea" placeholder="Type here..." v-model="form.message"></textarea>
       <button type="submit" class="btn btn-rectangle btn-50 btn-right" :disabled="!isFormFilled" :class="{ btnDisabled: !isFormFilled }">Send</button>
     </form>

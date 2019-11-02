@@ -27,11 +27,22 @@
     height: 55%;
   }
 
+  @include respond(phone-land) {
+    width: 40%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+  }
+
   &__image {
     width: 100%;
     max-height: 50rem;
     object-fit: contain;
     transform: translate(-5rem, 5rem);
+
+    @include respond(phone-land) {
+      transform: translate(0, 0);
+
+    }
   }
 }
 
@@ -46,14 +57,22 @@
   @include respond(tab-port) {
     top: 50%;
     left: 0;
-    height: 60%;
+    height: 50%;
     width: 100%;
   }
 
   @include respond(phone) {
     top: 45%;
     left: 0;
-    height: 60%;
+    height: 55%;
     width: 100%;
   }
+
+  @include respond(phone-land) {
+    top: 0%;
+    left: 40%;
+    height: 100%;
+    width: 60%;
+  }
+
 }

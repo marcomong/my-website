@@ -20,5 +20,11 @@
       width: auto;
       transform: translate(5%, -60%);
     }
+
+    @include respond(phone-land) {
+      height: 70%;
+      width: auto;
+      transform: translate(0%, -50%);
+    }
   }
 }

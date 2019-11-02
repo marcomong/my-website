@@ -6,7 +6,7 @@
   flex-direction: column;
   transform: translateY(10%);
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
   padding: 1rem;
 
   @include respond(phone) {
@@ -18,6 +18,11 @@
     transform: translateY(0%);
   }
 
+  @include respond(phone-land) {
+    width: 100%;
+    transform: translate(0,0);
+  }
+
   &__header {
     width: 100%;
     margin-bottom: 2.5rem;
@@ -25,6 +30,10 @@
 
     @include respond(tab-port) {
       margin-bottom: 1rem;
+    }
+
+    @include respond(phone-land) {
+      margin-bottom: 1.5rem;
     }
 
     &-main {
@@ -72,6 +81,10 @@
 
   @include respond(tab-port) {
     height: 100%;
+  }
+
+  @include respond(phone-land) {
+    height: 70%;
   }
 
   &__50 {

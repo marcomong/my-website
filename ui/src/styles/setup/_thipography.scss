@@ -29,5 +29,12 @@ body {
       transform: translate(-50%, 20%);
     }
 
+    @include respond(phone-land) {
+      font-size: $font-medium;
+      width: 40%;
+      left: 0%;
+      transform: translate(0, 0);
+    }
+
   }
 }

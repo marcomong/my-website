@@ -67,8 +67,12 @@ body {
 
   &-topRight {
     position: absolute;
-    right: 2rem;
     top: 2rem;
+    right: 2rem;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
   
   &:hover {

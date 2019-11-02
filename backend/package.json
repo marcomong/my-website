@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend my website",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "test": "test"
+  },
+  "author": "Marco Mongelli",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "nodemailer": "^6.3.1",
+    "nodemon": "^1.19.4",
+    "validator": "^12.0.0",
+    "winston": "^2.4.0"
+  }
+}

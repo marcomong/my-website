@@ -1,14 +1,18 @@
 <template>
   <div id="app">
+    <p class="primaryHeading primaryHeading-main">
+      Full-Stack Web Developer
+    </p>
     <div class="bubbles">
       <img srcset="@/assets/background/bubbles/bubbles.png 1x, @/assets/background/bubbles/bubbles@2x.png 2x" alt="bubbles" class="bubbles__image">
     </div>
-    <div class="code">
-      <img srcset="@/assets/background/code/code_background.png 1x, @/assets/background/code/code_background@2x.png 2x" alt="bubbles" class="code__image">
+    <div class="activeSide">
+      <router-view></router-view>
     </div>
-    <p class="primaryHeading primaryHeading-home">
-      Full-Stack Web Developer
-    </p>
+    <div class="btn btn-round btn-home" @click="$router.push('contactMe')" v-if="$route.name != 'contactMe'">
+      <img srcset="@/assets/chat/chat.png 1x, @/assets/chat/chat@2x.png 2x" alt="chat icon" class="btn__image">
+    </div>
+
   </div>
 </template>
 

@@ -1,0 +1,12 @@
+.code {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+
+  &__image {
+    height: auto;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+}

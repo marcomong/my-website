@@ -1,0 +1,68 @@
+.contactMe {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateY(10%);
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+
+  @include respond(tab-port) {
+    transform: translateY(0);
+  }
+
+  &__header {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    color: $color-white;
+
+    @include respond(tab-port) {
+      margin-bottom: 1rem;
+    }
+
+    &-main {
+      font-weight: 600;
+      font-size: $font-large;
+      margin-bottom: .5rem;
+
+      @include respond(tab-port) {
+        font-size: $font-medium;
+      }
+    }
+
+    &-subMain {
+      font-weight: 300;
+      font-size: $font-medium;
+
+      @include respond(tab-port) {
+        font-size: $font-small;
+      }
+    }
+  }
+}
+
+.emailForm {
+  width: 100%;
+  box-sizing: border-box;
+
+  @include respond(tab-port) {
+    height: 100%;
+  }
+
+  &__50 {
+    width: 48%;
+
+    &-left {
+      margin-right: 2%;
+    }
+    &-right {
+      margin-left: 2%;
+    }
+  }
+
+  &__100 {
+    width: 100%;
+  }
+}

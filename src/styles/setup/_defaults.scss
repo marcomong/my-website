@@ -13,3 +13,94 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.btn {
+  background-color: $color-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  &Disabled {
+    background-color: rgba($color-blue, 0.4);
+    color: rgba($color-white, 0.5);
+    cursor: not-allowed;
+  }
+
+  &-round {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100rem;
+  }
+
+  &-rectangle {
+    width: auto;
+    padding: .5rem;
+  }
+
+  &-50 {
+    width: 50%;
+  }
+  
+  &-right {
+    float: right;
+  }
+
+  &__image {
+    height: 50%;
+    width: auto;
+    transform: translateY(5%);
+  }
+  
+  &:hover {
+    background-color: rgba($color-blue, 0.7);
+  }
+}
+
+.input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: .1rem solid rgba($color-blue, .5);
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  color: $color-white;
+  font-weight: 600;
+  font-size: $font-small;
+
+  &::placeholder {
+    color: $color-white;
+    font-weight: 300;
+  }
+
+  &:focus {
+    border-bottom: .1rem solid rgba($color-blue, 1);
+  }
+}
+
+.textArea {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: .1rem solid rgba($color-blue, .5);
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  resize: none;
+  height: 10rem;
+  padding: .5rem;
+  color: $color-white;
+  font-size: $font-small;
+
+  &::placeholder {
+    color: $color-white;
+    font-weight: 300;
+  }
+
+  &:focus {
+    border: .1rem solid rgba($color-blue, 1);
+  }
+}

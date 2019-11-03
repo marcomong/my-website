@@ -30,7 +30,7 @@ body {
     }
 
     @include respond(phone-land) {
-      font-size: $font-medium;
+      font-size: $font-medium*1.4;
       width: 40%;
       left: 0%;
       transform: translate(0, 0);

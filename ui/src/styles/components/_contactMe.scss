@@ -66,6 +66,14 @@
     justify-content: center;
     height: 2.5rem;
   }
+
+  &__errMsg {
+    width: 100%;
+    text-align: center;
+    padding: .5rem;
+    color: $color-red;
+    font-size: $font-small;
+  }
 }
 
 .emailSent {

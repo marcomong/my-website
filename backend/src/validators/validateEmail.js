@@ -13,25 +13,25 @@ module.exports.general = (req, res, next) => {
     case 0:
       log.error('Error while registering new user: email not valid.', body)
       res.status(412).send({
-        error: `Request is invalid. Check your email.`
+        error: `Check your email.`
       })
       break
     case 1:
       log.error('Error in body: : name not valid.', body)
       res.status(412).send({
-        error: `Request is invalid. Check your name.`
+        error: `Check your name.`
       })
       break
     case 2:
       log.error('Error in body: last Name not valid.', body)
       res.status(412).send({
-        error: `Request is invalid. Check your last Name.`
+        error: `Check your last Name.`
       })
       break
     case 3:
       log.error('Error in body: message is not valid.', body)
       res.status(412).send({
-        error: `Request is invalid. Check your message content.`
+        error: `Check your message message.`
       })
       break
     default:
@@ -56,7 +56,7 @@ module.exports.validate = (body) => {
   }
 
   if (body.hasOwnProperty('lastName')) {
-    if (!body.lastName || !validator.isAlpha(body.lastName))
+    if (!body.lastName || validator.isEmpty(body.lastName))
       return 2
   }
 

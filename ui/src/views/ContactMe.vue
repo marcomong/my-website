@@ -18,6 +18,11 @@
       <div class="contactMe__state" v-if="isLoading">
        <pulse-loader :loading="isLoading" :color="color"></pulse-loader>
       </div>
+      <div class="contactMe__errMsg">
+        <div v-if="errorMsg">
+          {{ errorMsg }}
+        </div>
+      </div>
       <button v-if="!isLoading && !isEmailSent" type="submit" class="btn btn-rectangle btn-50 btn-right" :disabled="!isFormFilled" :class="{ btnDisabled: !isFormFilled }">Send</button>
       <div class="contactMe__state emailSent" v-if="isEmailSent">
         &#x2714; Sent
@@ -44,7 +49,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getIsLoading', 'getIsEmailSent']),
+    ...mapGetters(['getIsLoading', 'getIsEmailSent', 'getErrorMsg']),
     isFormFilled () {
       return this.form.name && this.form.lastName && this.form.email && this.form.message
     },
@@ -53,12 +58,25 @@ export default {
     },
     isEmailSent () {
       return this.getIsEmailSent
+    },
+    errorMsg () {
+      return this.getErrorMsg
     }
   },
   methods: {
     ...mapActions(['contactMe']),
     handleSubmit () {
       this.contactMe(this.form)
+    }
+  },
+  watch: {
+    form: {
+      handler: function (val, oldval) {
+        if (this.errorMsg) {
+          this.$store.commit('setErrorMsg', '')
+        }
+      },
+      deep: true
     }
   },
   components: {
